@@ -1,0 +1,312 @@
+@import url('https://fonts.googleapis.com/css?family=Literata&display=swap');
+
+html {
+    font-size: 10px;
+}
+
+body {
+    font-family: 'Literata', serif;
+    font-size: 1.6rem;
+    line-height: 1.5;
+    text-align: left;
+    color: #333;
+    margin:0;
+    background: #fff;
+}
+
+img {
+    display: block;
+    max-width: 100%;
+    height: auto;
+    margin: 0 auto;
+}
+
+a {
+    text-decoration: none;
+    color: #ff8360;
+}
+
+a:hover {
+    text-decoration: underline;
+    color: #e8e288;
+}
+
+h1 {
+    font-size: 4.5rem;
+    margin-bottom: 0;
+}
+
+h2 { font-size: 3.0rem; }
+h3 { font-size: 2.5rem; }
+h4 { font-size: 2.3rem; }
+
+ul {
+    list-style: none;
+}
+
+.container {
+    max-width: 900px;
+    margin: 0 auto;
+}
+
+.grid {
+    display: grid;
+    grid-template-columns: 1fr 3fr;
+}
+
+.btn {
+    height: 40px;
+    padding: 0 1rem;
+    font-size: 1em;
+    text-transform: uppercase;
+    border: 0;
+    border-radius: 3px;
+    background: #ff8360;
+    cursor: pointer;
+}
+
+.btn:hover {
+    background: #e8e288;
+    transition: background-color 1s;
+}
+
+header {
+    position: fixed;
+    top: 0;
+    min-height: 75px;
+    width: 100%;
+    background-color: #fff;
+}
+
+#header > .container {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    padding: 1rem 0;
+}
+
+#logo {
+    display: flex;
+    justify-content: center;
+    width: 100%;
+}
+
+#logo > img {
+    width: 100%;
+    height: 100%;
+    max-width: 60px;
+    margin: 0;
+}
+
+#nav-bar {
+    width: 100%;
+}
+
+#nav-bar > ul {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    text-align: center;
+    padding: 0;
+}
+
+#nav-bar > ul > li {
+    margin: 0;
+    padding: 0;
+    font-size: 1.4rem;
+}
+
+#hero,
+#features,
+#media,
+#pricing,
+#contact {
+    padding: 2rem;
+}
+
+#hero,
+#contact {
+    color: #fff;
+    background: #0fa3b1;
+}
+
+#hero {
+    height: 250px;
+    display: flex;
+    justify-content: center;
+    text-align: center;
+    margin-top: 75px;
+}
+
+#features > .container > .grid {
+    display: flex;
+}
+
+#features > .container > .grid > .icon {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 30%;
+}
+
+#features > .container > .grid > .desc {
+    width: 70%;
+}
+
+#features > .container > .grid > .desc > h2 {
+    margin-bottom: 0;
+}
+
+#features > .container > .grid > .desc > p {
+    margin-top: 0;
+}
+
+#media {
+    text-align: center;
+}
+
+#pricing > .container {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+
+.product {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    width: 100%;
+    border: 1px solid #ccc;
+}
+
+.product > .level {
+    width: 100%;
+    padding: 1rem 0;
+    text-transform: uppercase;
+    color: #000;
+    background-color: #ddd;
+}
+
+.product > button {
+    margin: 1rem 0;
+}
+
+#contact > .container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+}
+
+#contact > .container > #form {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+}
+
+#contact input[type="email"] {
+    max-width: 275px;
+    width: 100%;
+    padding: .5em;
+    border: 0;
+    border-radius: 3px;
+}
+
+#contact input[type="submit"] {
+    max-width: 150px;
+    width: 100%;
+    height: 30px;
+    margin: 1.5rem 0;
+}
+
+
+#footer {
+    padding: 2rem;
+}
+
+#footer > .container {
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-end;
+}
+
+#footer > .container > ul {
+    display: flex;
+    justify-content: flex-end;
+    margin-bottom: 5px;
+}
+
+#footer > .container > ul > li {
+    margin: 0 1rem;
+    font-size: 1.2rem;
+}
+
+#footer >.container > span {
+    display: flex;
+    justify-content: flex-end;
+    font-size: 1.2rem;
+    color: #333;
+}
+
+
+
+
+
+@media (min-width: 600px) {
+    #header > .container {
+        display: flex;
+        flex-direction: row;
+        padding: 1rem 0;
+    }
+
+    #logo {
+        width: 30%;
+    }
+    
+    #logo > img {
+        width: 100%;
+        height: 100%;
+        max-width: 60px;
+        margin: 0;
+    }
+    
+    #nav-bar {
+        width: 70%;
+    }
+    
+    #nav-bar > ul {
+        display: flex;
+        flex-direction: row;
+        justify-content: flex-end;
+    }
+    
+    #nav-bar > ul > li {
+        margin: 0 1rem;
+        font-size: 1.4rem;
+    }
+
+    #hero {
+        height: 200px;
+    }
+
+    #pricing > .container {
+        display: flex;
+        flex-direction: row;
+        justify-content: center;
+    }
+
+    .product {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        text-align: center;
+        width: calc(100% / 3);
+        border: 1px solid #ccc;
+    }
+    
+}

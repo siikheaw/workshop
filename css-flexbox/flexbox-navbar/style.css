@@ -1,0 +1,141 @@
+@import url('https://fonts.googleapis.com/css?family=Roboto+Mono&display=swap');
+
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+html {
+    background: ghostwhite url(./images/papyrus.png);
+    background-repeat: repeat;
+}
+
+/* Sharing styles */
+.header-flex {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    margin: 50px;
+    padding: 20px;
+    background: black;
+}
+
+.header-flex * {
+    font-family: 'Roboto Mono', sans-serif;
+    font-size: 13px;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+    color: ghostwhite;
+}
+
+.header-flex .logo img {
+    max-width: 100%;
+}
+
+.header-flex ul {
+    display: flex;
+    list-style: none;
+}
+
+.header-flex li {
+    padding: 0 10px;
+}
+
+.header-flex a {
+    text-decoration: none;
+    transition: all 0.3s ease 0s;
+}
+
+.header-flex li a:hover {
+    color: DarkTurquoise;
+}
+
+.header-flex button {
+    padding: 9px 25px;
+    font-weight: 500;
+    text-decoration: none;
+    color: ghostwhite;
+    background: DarkTurquoise;
+    border: none;
+    border-radius: 60px;
+    cursor: pointer;
+    transition: all 0.3s ease 0s;
+}
+
+.header-flex button:hover {
+    background-color: Turquoise;
+}
+
+.header-flex .logo {
+    cursor: pointer;
+}
+
+/* Mobile first*/
+@media (max-width: 699px) {
+    .header-flex {
+        flex-direction: column;
+    }
+
+    .header-flex .logo {
+        flex-basis: 100%;
+        text-align: center;
+        margin: 10px auto;
+    }
+
+    .header-flex nav {
+        margin: 10px auto;
+    }
+
+    .header-flex .cta {
+        margin: 10px auto;
+    }
+}
+
+@media (min-width: 700px) {
+    .header-flex {
+        flex-direction: row;
+    }
+}
+
+/* 
+    Flex style 1 - Space between
+*/
+.flex-1 .header-flex {
+    justify-content: space-between;
+}
+
+/*
+    Flex style 2 - Left logo
+*/
+.flex-2 .header-flex {
+    justify-content: flex-end;
+}
+
+.flex-2 .logo {
+    margin-right: auto;
+}
+
+/*
+    Flex style 3 - Reorder
+*/
+.flex-3 .header-flex {
+    justify-content: space-between;
+}
+
+.flex-3 .header-flex > * {
+    order: 9;
+}
+
+.flex-3 .header-flex nav {
+    order: 1;
+}
+
+.flex-3 .header-flex .logo {
+    order: 2;
+}
+
+.flex-3 .header-flex .cta {
+    order: 3;
+}
+

@@ -1,0 +1,265 @@
+@import url('https://fonts.googleapis.com/css?family=Roboto+Mono&display=swap');
+
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+html {
+    color: ghostwhite;
+    background: ghostwhite url(./images/papyrus.png);
+    background-repeat: repeat;
+}
+
+/* - */
+html, body, div, span, applet, object, iframe, h1, h2, h3, h4, h5, h6, p, blockquote, pre, a, abbr, acronym, address, big, cite, code, del, dfn, em, img, ins, kbd, q, s, samp, small, strike, strong, sub, sup, tt, var, b, u, i, center, dl, dt, dd, ol, ul, li, fieldset, form, label, legend, table, caption, tbody, tfoot, thead, tr, th, td, article, aside, canvas, details, embed, figure, figcaption, footer, header, hgroup, menu, nav, output, ruby, section, summary, time, mark, audio, video {
+    margin: 0;
+    padding: 0;
+    border: 0;
+    font-size: 100%;
+    font: inherit;
+    vertical-align: baseline;
+  }
+  
+  article, aside, details, figcaption, figure, footer, header, hgroup, menu, nav, section {
+    display: block;
+  }
+  
+  body {
+    line-height: 1;
+  }
+  
+  ol, ul {
+    list-style: none;
+  }
+  
+  blockquote:before,
+  blockquote:after,
+  q:before, q:after {
+    content: "";
+    content: none;
+  }
+  
+  table {
+    border-collapse: collapse;
+    border-spacing: 0;
+  }
+  
+  body {
+    background: #fff;
+    font: 14px/1.6 "HelveticaNeue", "Helvetica Neue", Helvetica, Arial, sans-serif;
+    color: #333;
+    -webkit-font-smoothing: antialiased;
+    -webkit-text-size-adjust: 100%;
+  }
+  
+  h1, h2, h3, h4, h5, h6 {
+    color: #111;
+    font-weight: bold;
+  }
+  
+  h1 {
+    font-size: 60px;
+    line-height: 1.1;
+  }
+  
+  h2 {
+    font-size: 48px;
+    line-height: 1.2;
+  }
+  
+  h3 {
+    font-size: 36px;
+    line-height: 1.3;
+  }
+  
+  h4 {
+    font-size: 24px;
+    line-height: 1.4;
+  }
+  
+  h5 {
+    font-size: 21px;
+    line-height: 1.5;
+  }
+  
+  h6 {
+    font-size: 18px;
+    line-height: 1.6;
+  }
+  
+  p {
+    margin: 0 0 20px 0;
+  }
+  
+  em {
+    font-style: italic;
+  }
+  
+  strong {
+    font-weight: bold;
+  }
+  
+  hr {
+    border: solid #ddd;
+    border-width: 1px 0 0;
+    clear: both;
+    margin: 10px 0 30px;
+    height: 0;
+  }
+  
+  a {
+    color: #333;
+    text-decoration: underline;
+    outline: 0;
+  }
+  
+  a:hover, a:focus {
+    color: #000;
+  }
+  
+  * {
+    box-sizing: border-box;
+  }
+  
+  body {
+    background: url(https://d13yacurqjgara.cloudfront.net/assets/noise-f1-34223af06da6ee10a0b27723268a1f95.gif);
+  }
+  
+  .header-banner {
+    background: rgba(47, 47, 47, 0.98);
+  }
+  
+  header {
+    color: rgba(255, 255, 255, 0.5);
+    font-size: 12px;
+    font-weight: bold;
+    padding: 16px 0;
+  }
+  header a {
+    color: rgba(255, 255, 255, 0.5);
+    text-decoration: none;
+    transition: all 300ms;
+  }
+  header a:hover {
+    color: white;
+  }
+  header .search-form input {
+    border: none;
+    border-radius: 5px;
+    padding: 5px 8px;
+  }
+  header .avatar {
+    height: 16px;
+    width: 16px;
+    border-radius: 50%;
+  }
+  
+  .section-nav {
+    padding: 10px 0;
+    border-bottom: 1px solid #ccc;
+  }
+  .section-nav a {
+    font-weight: bold;
+    text-decoration: none;
+    color: rgba(0, 0, 0, 0.5);
+    margin: 0 20px 0 0;
+  }
+  .section-nav a.active, .section-nav a:hover {
+    color: black;
+  }
+  
+  .shots {
+    padding: 20px 0;
+  }
+  .shots .shot-wrap {
+    display: block;
+    margin-bottom: 20px;
+    text-decoration: none;
+    font-size: 12px;
+  }
+  .shots .shot {
+    background: white;
+    padding: 10px 10px 6px 10px;
+    border-radius: 3px;
+    box-shadow: 0 1px 2px rgba(0, 0, 0, 0.07);
+  }
+  .shots .meta {
+    color: #888;
+  }
+  .shots .meta div:before {
+    content: "";
+    display: inline-block;
+    height: 12px;
+    width: 18px;
+    background: pink;
+    margin: 0 2px 0 5px;
+    position: relative;
+    top: 2px;
+  }
+  .shots .meta div.views:before {
+    background: url(https://d13yacurqjgara.cloudfront.net/assets/icon-views-sm-f315b1f67523edc4a3e8b4a5c20a7fa6.png) center top no-repeat;
+  }
+  .shots .meta div.comments:before {
+    background: url(https://d13yacurqjgara.cloudfront.net/assets/icon-comments-4ec91f1ac45527f803cf99e98c896ce6.png) center top no-repeat;
+  }
+  .shots .meta div.likes:before {
+    background: url(https://d13yacurqjgara.cloudfront.net/assets/icon-hearts-79d9278bcac5768da940cd4487c574f6.png?) center top no-repeat;
+  }
+  .shots .owner {
+    margin: 10px;
+  }
+  .shots .owner .avatar {
+    height: 16px;
+    width: 16px;
+    border-radius: 50%;
+    margin-right: 4px;
+    vertical-align: sub;
+  }
+  .shots .owner .name {
+    font-weight: bold;
+    color: #4083a9;
+  }
+  
+  .positioner {
+    max-width: 970px;
+    margin: 0 auto;
+  }
+  
+  header, header nav, header nav ul, header .user-tools, .shots, .shots .meta {
+    display: flex;
+  }
+  
+  header {
+    justify-content: space-between;
+  }
+  header nav {
+    align-items: center;
+  }
+  header nav ul li {
+    margin: 0 20px;
+  }
+  header .user-tools {
+    align-items: center;
+  }
+  header .user-tools img {
+    margin: 0 20px;
+  }
+  
+  .shots {
+    flex-wrap: wrap;
+    justify-content: space-between;
+  }
+  .shots .meta {
+    justify-content: flex-end;
+  }
+  
+  .ref-link {
+    text-align: center;
+    font-size: 24px;
+    border-top: 1px solid rgba(0, 0, 0, 0.1);
+    margin-top: 20px;
+    padding-top: 30px;
+  }
+  
