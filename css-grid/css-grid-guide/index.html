@@ -1,0 +1,66 @@
+<!DOCTYPE html><html><meta http-equiv="Content-Type" content="text/html;charset=UTF-8"><meta name="viewport" content="width=device-width, initial-scale=1.0"><link rel="stylesheet" href="style.css"><link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/prism/1.17.1/themes/prism-tomorrow.min.css"><body><header id="page-header"><h1 class="title page-title">CSS Grid Demo</h1><p class="tagline">Just my way of learning CSS Grid</p></header><section class="wrapper"><div class="container"><h2 class="title container-title">Basic</h2><p class="subtitle">grid-template</p><div class="grid grid-basic"><div class="display-grid"><div class="item">1</div><div class="item">2</div><div class="item">3</div><div class="item">4</div><div class="item">5</div><div class="item">6</div><div class="item">7</div><div class="item">8</div><div class="item">9</div></div><div class="display-code"><pre><code class="language-css">display: grid;
+/* Can be any units - px | em | rem | fr | auto */
+grid-template-columns: 70px 25% auto;
+grid-template-rows: 50px 30% auto;
+grid-gap: 15px;</code></pre></div></div></div><div class="container"><h2 class="title container-title">Template Areas</h2><p class="subtitle">grid-template-areas | grid-area</p><div class="grid grid-template-areas"><div class="display-grid"><div class="item header">Header</div><div class="item main"> Main</div><div class="item sidebar">Sidebar</div><div class="item footer">Footer</div></div><div class="display-code"><pre><code class="language-css">.grid-template-areas {
+   grid-template-columns: repeat(4, 1fr);
+   /* . = empty area */
+   grid-template-areas: 
+     'header header  header  header'
+     'main   main   .       sidebar'
+     'footer footer  footer  footer'
+ }
+ .header { grid-area: header; }
+ .main { grid-area: main; }
+ .sidebar { grid-area: sidebar; }
+ .footer { grid-area: footer; }</code></pre></div></div></div><div class="container"><h2 class="title container-title">Positioning Items</h2><p class="subtitle">justify-items | align-items</p><div class="grid grid-positioning justify-items"><div class="display-grid"><div class="item">1</div><div class="item">2</div><div class="item">3</div><div class="item">4</div><div class="item">5</div><div class="item">6</div><div class="item">7</div><div class="item">8</div><div class="item">9</div></div><div class="display-code"><pre><code class="language-css">.justify-items {
+  grid-template-columns: repeat(3, 1fr);
+  justify-items: end; /* stretch | start | end | center */
+}</code></pre></div></div><div class="grid grid-positioning align-items"><div class="display-grid"><div class="item">1</div><div class="item">2</div><div class="item">3</div><div class="item">4</div><div class="item">5</div><div class="item">6</div><div class="item">7</div><div class="item">8</div><div class="item">9</div></div><div class="display-code"><pre><code class="language-css">.align-items {
+  grid-template-columns: repeat(3, 1fr);
+  grid-template-rows: repeat(3, 70px);
+  align-items: end; /* stretch | start | end | center */
+}
+
+/* Shorthand for justify &amp; align items */
+/* place-items: align-items justify-items */</code></pre></div></div></div><div class="container"><h2 class="title container-title">Positioning Content</h2><p class="subtitle">justify-content | align-content</p><div class="grid grid-positioning justify-content"><div class="display-grid"><div class="item">1</div><div class="item">2</div><div class="item">3</div><div class="item">4</div><div class="item">5</div><div class="item">6</div><div class="item">7</div><div class="item">8</div><div class="item">9</div></div><div class="display-code"><pre><code class="language-css">.justify-content {
+  grid-template-columns: repeat(3, 80px);
+  justify-content: end; /* stretch | start | end | center | space-around | space-between | space-evenly */
+}</code></pre></div></div><div class="grid grid-positioning align-content"><div class="display-grid"><div class="item">1</div><div class="item">2</div><div class="item">3</div><div class="item">4</div><div class="item">5</div><div class="item">6</div><div class="item">7</div><div class="item">8</div><div class="item">9</div></div><div class="display-code"><pre><code class="language-css">.align-content {
+  grid-template-columns: repeat(3, 1fr);
+  grid-template-rows: repeat(3, 50px);
+  align-content: end; /* stretch | start | end | center | space-around | space-between | space-evenly */
+  height: 200px;
+}
+
+/* Shorthand for justify &amp; align items */
+/* place-content: align-content justify-content */</code></pre></div></div></div><div class="container"><h2 class="title container-title">Grid Auto Flow, Auto Columns &amp; Auto Rows</h2><p class="subtitle"> Control the auto-placement algorithm<br>Specifies the sizes of IMPLICIT grid tracks<br>grid-auto-flow | grid-auto-columns | grid-auto-rows</p><div class="grid grid-auto auto-columns"><div class="display-grid"><div class="item">1</div><div class="item">2</div><div class="item">3</div><div class="item">4</div><div class="item">5</div></div><div class="display-code"><pre><code class="language-css">.auto-columns {
+  grid-auto-flow: column; /* controls how the auto-placement algorithm works - row | column | dense */
+  grid-template-columns: 50px;
+  grid-auto-columns: 50px;
+}</code></pre></div></div><div class="grid grid-auto auto-rows"><div class="display-grid"><div class="item">1</div><div class="item">2</div><div class="item">3</div><div class="item">4</div><div class="item">5</div></div><div class="display-code"><pre><code class="language-css">.auto-rows {
+  grid-auto-flow: row; /* controls how the auto-placement algorithm works - row | column | dense */
+  grid-template-columns: repeat(3, 1fr);     
+  grid-auto-rows: 50px;
+}</code></pre></div></div></div><div class="container"><h2 class="title container-title">Placing &amp; Sizing Grid Items</h2><p class="subtitle">track-start / track-end</p><div class="grid grid-sizing"><div class="display-grid"><div class="item item-a">A</div><div class="item item-b">B</div><div class="item item-c">C</div></div><div class="display-code"><pre><code class="language-css">.grid-sizing {
+  grid-template-columns: repeat(4, 1fr);
+  grid-template-rows: repeat(3, 50px);
+}
+.item-a { grid-column: 2 / 3; }
+.item-b { grid-column: 3 / 5; grid-row: 2 / 3; }
+.item-c { grid-column: 1 / 2; grid-row: 2/ 4; }</code></pre></div></div></div><div class="container"><h2 class="title container-title">Placing Individual Items</h2><p class="subtitle">justify-self | align-self</p><div class="grid place-self justify-self"><div class="display-grid"><div class="item">1</div><div class="item">2</div><div class="item">3</div></div><div class="display-code"><pre><code class="language-css">.justify-self .item:nth-child(3) {
+  justify-self: end;
+  background: peachpuff;
+}</code></pre></div></div><div class="grid place-self align-self"><div class="display-grid"><div class="item">1</div><div class="item">2</div><div class="item">3</div></div><div class="display-code"><pre><code class="language-css">.align-self { grid-template-rows: 80px; }
+.align-self .item:nth-child(3) {
+  align-self: end;
+  background: peachpuff;
+}</code></pre></div></div></div><div class="container"><h2 class="title container-title">Auto Fit &amp; Auto Fill</h2><p class="subtitle">auto-fit | auto-fill</p><div class="grid auto-fit"><div class="display-grid"><div class="item">1</div><div class="item">2</div><div class="item">3</div><div class="item">4</div><div class="item">5</div></div><div class="display-code"><pre><code class="language-css">.auto-fit .display-grid {
+  grid-template-columns: repeat(auto-fit, minmax(100px, 1fr));
+}</code></pre></div></div><div class="grid auto-fill"><div class="display-grid"><div class="item">1</div><div class="item">2</div><div class="item">3</div><div class="item">4</div><div class="item">5</div></div><div class="display-code"><pre><code class="language-css">.auto-fill .display-grid {
+  grid-template-columns: repeat(auto-fill, minmax(100px, 1fr));
+}</code></pre></div></div></div><div class="container"><h2 class="title container-title">Minmax</h2><p class="subtitle">minmax | min-content | max-content</p><div class="grid min-content"><div class="display-grid"><div class="item">1</div><div class="item">2</div><div class="item">3</div></div><div class="display-code"><pre><code class="language-css">.min-content {
+  grid-template-columns: 150px 1fr min-content;
+}</code></pre></div></div><div class="grid minmax"><div class="display-grid"><div class="item">1</div><div class="item">2</div><div class="item">3</div><div class="item">4</div><div class="item">5</div></div><div class="display-code"><pre><code class="language-css">.minmax {
+  grid-template-columns: repeat(auto-fill, minmax(150px, 1fr));
+}</code></pre></div></div></div></section><footer id="page-footer"><h3 class="ref">References</h3><ul><li> <a href="https://css-tricks.com/snippets/css/complete-guide-grid/">CSS-Tricks: A Complete Guide to Grid</a></li><li><a href="https://cssgrid.io">Wes Bos: CSS Grid</a></li></ul></footer><script src="https://cdn.jsdelivr.net/npm/prismjs@1.17.1/prism.min.js"></script></body></html>

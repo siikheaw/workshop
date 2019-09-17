@@ -1,5 +1,6 @@
 @import url('https://fonts.googleapis.com/css?family=Roboto+Mono&display=swap');
 
+/* Basic setup */
 * {
     box-sizing: border-box;
     margin: 0;
@@ -11,26 +12,38 @@ html {
     background-repeat: repeat;
 }
 
+body {
+    min-height: 100vh;
+    padding: 8vw;
+    font-family: 'Roboto Mono', sans-serif;
+    font-size: 16px;
+}
+
+/* Template setup */
+
+.page-header {
+    margin: 20px auto;
+    text-align: center;
+}
+
+.page-title {
+    margin: 20px auto;
+    font-size: 42px;
+    text-align: center;
+    text-transform: uppercase;
+    line-height: 1em;
+    color: black;
+}
+
 /* Sharing styles */
 .header-flex {
     display: flex;
     flex-wrap: wrap;
     align-items: center;
-    margin: 50px;
+    margin: 50px auto;
     padding: 20px;
     background: black;
-}
-
-.header-flex * {
-    font-family: 'Roboto Mono', sans-serif;
-    font-size: 13px;
-    text-transform: uppercase;
-    letter-spacing: 2px;
-    color: ghostwhite;
-}
-
-.header-flex .logo img {
-    max-width: 100%;
+    box-shadow: 0 0 5px rgba(0, 0, 0, 0.5);
 }
 
 .header-flex ul {
@@ -42,21 +55,26 @@ html {
     padding: 0 10px;
 }
 
-.header-flex a {
+.header-flex lia {
+    font-size: 13px;
     text-decoration: none;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+    color: ghostwhite;
     transition: all 0.3s ease 0s;
 }
 
 .header-flex li a:hover {
-    color: DarkTurquoise;
+    color: turquoise;
 }
 
 .header-flex button {
     padding: 9px 25px;
+    font-family: 'Roboto Mono', sans-serif;
     font-weight: 500;
     text-decoration: none;
     color: ghostwhite;
-    background: DarkTurquoise;
+    background: darkturquoise;
     border: none;
     border-radius: 60px;
     cursor: pointer;
@@ -64,7 +82,7 @@ html {
 }
 
 .header-flex button:hover {
-    background-color: Turquoise;
+    background-color: turquoise;
 }
 
 .header-flex .logo {
@@ -72,7 +90,7 @@ html {
 }
 
 /* Mobile first*/
-@media (max-width: 699px) {
+@media (max-width: 780px) {
     .header-flex {
         flex-direction: column;
     }
@@ -92,13 +110,13 @@ html {
     }
 }
 
-@media (min-width: 700px) {
+@media (min-width: 781px) {
     .header-flex {
         flex-direction: row;
     }
 }
 
-/* 
+/*  
     Flex style 1 - Space between
 */
 .flex-1 .header-flex {
@@ -138,4 +156,5 @@ html {
 .flex-3 .header-flex .cta {
     order: 3;
 }
+
 

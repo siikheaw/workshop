@@ -1,0 +1,251 @@
+@import url('https://fonts.googleapis.com/css?family=Merriweather:400,700|Roboto+Mono&display=swap');
+
+:root {
+  --spacing: 0.75rem;
+  --page-color: #32374c;
+  --font-color: #c3c8e2;
+  --accent-color: #00c6c0;
+  --alternate-color: #fff7d6;
+}
+
+html {
+  box-sizing: border-box;
+  font-family: 'Roboto Mono', monospace;
+  font-size: 1rem;
+  font-weight: 400;
+  color: var(--font-color);
+  text-shadow: 0 2px 0 rgba(0, 0, 0, 0.07);
+  background: var(--page-color);
+  background-image: linear-gradient(to right top, #32374c, #2c3043, #25293a, #1f2231, #191c29);
+}
+
+*,
+*:before,
+*:after {
+  box-sizing: inherit;
+}
+
+body {
+  min-height: calc(100vh - 100px);
+  width: 80vw;
+  margin: 50px auto;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  font-family: 'Merriweather', serif;
+  margin: 0 0 var(--spacing) 0;
+}
+
+a {
+  color: var(--accent-color);
+}
+
+/* Theming - Just for the beauty */
+#page-header {
+  padding-bottom: 30px;
+  margin-bottom: 50px;
+  border-bottom: 2px solid rgba(0, 0, 0, 0.5);
+}
+
+.tagline,
+.title,
+.subtitle {
+  margin: 0 0 var(--spacing) 0;
+  text-align: center;
+}
+
+.container {
+  margin: 0;
+  margin-bottom: 50px;
+}
+
+pre[class*="language-"] {
+  margin: 0 !important;
+  border: 5px solid rgba(0, 0, 0, 0.03);
+  border-radius: 3px;
+}
+
+/* Each item in our grid will contain numbers */
+.item {
+  /* We center the contents of these items. You can also do this with flexbox too! */
+  display: grid;
+  justify-content: center;
+  align-items: center;
+  font-size: 25px;
+  color: white;
+  background-color: var(--accent-color);
+  border: 5px solid rgba(0, 0, 0, 0.03);
+  border-radius: 3px;
+}
+
+p {
+  margin: 0 0 var(--spacing) 0;
+}
+
+/* Grid visual display */
+.grid {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(200px, 1fr));
+  grid-column-gap: 30px;
+  grid-row-gap: 5px;
+  margin: 30px 0;
+}
+
+.display-grid {
+  display: grid;
+  grid-gap: 10px;
+  background: rgba(0, 0, 0, 0.15);
+}
+
+
+
+/* ---------------------------
+  Grid Basic
+--------------------------- */
+.grid-basic .display-grid {
+  grid-template-columns: 70px 25% auto;
+  grid-template-rows: 50px 30% auto;
+}
+
+/* ---------------------------
+  Grid Template Areas
+--------------------------- */
+.grid-template-areas .display-grid {
+  grid-template-columns: repeat(4, 1fr);
+  grid-template-areas: 
+    'header header  header  header'
+    'main   main   .       sidebar'
+    'footer footer  footer  footer'
+}
+
+.grid-template-areas .header {
+  grid-area: header;
+}
+
+.grid-template-areas .main {
+  grid-area: main;
+}
+
+.grid-template-areas .sidebar {
+  grid-area: sidebar;
+}
+
+.grid-template-areas .footer {
+  grid-area: footer;
+}
+
+/* ---------------------------
+  Grid Positioning
+--------------------------- */
+.grid-positioning .display-grid {
+  background: rgba(0, 0, 0, 0.2);
+}
+
+.justify-items .display-grid {
+  grid-template-columns: repeat(3, 1fr);
+  justify-items: end;
+}
+
+.align-items .display-grid {
+  grid-template-columns: repeat(3, 1fr);
+  grid-template-rows: repeat(3, 70px);
+  align-items: end;
+}
+
+.justify-content .display-grid {
+  grid-template-columns: repeat(3, 80px);
+  justify-content: end;
+}
+
+.align-content .display-grid {
+  grid-template-columns: repeat(3, 1fr);
+  grid-template-rows: repeat(3, 50px);
+  align-content: end;
+  height: 200px;
+}
+
+/* ---------------------------
+  Grid Auto Flow
+--------------------------- */
+.auto-columns .display-grid {
+  grid-template-columns: 50px;
+  grid-auto-flow: column;
+  grid-auto-columns: 50px;
+}
+
+.auto-rows .display-grid {
+  grid-template-columns: repeat(3, 1fr);
+  grid-auto-flow: row;
+  grid-auto-rows: 50px;
+}
+
+/* ---------------------------
+  Grid Sizing
+--------------------------- */
+.grid-sizing .display-grid {
+  grid-template-columns: repeat(4, 1fr);
+  grid-template-rows: repeat(3, 50px);
+}
+
+.grid-sizing .item-a {
+  grid-column: 2 / 3;
+}
+
+.grid-sizing .item-b {
+  grid-column: 3 / 5;
+  grid-row: 2 span 1;
+}
+
+.grid-sizing .item-c {
+  grid-column: 1 / 2;
+  grid-row: 2/ 4;
+}
+
+/* ---------------------------
+  Place-self
+--------------------------- */
+.place-self .display-grid {
+  grid-template-columns: repeat(3, 1fr);
+}
+
+.justify-self .display-grid .item:nth-child(3) {
+  justify-self: end;
+  background: peachpuff;
+}
+
+.align-self .display-grid {
+  grid-template-rows: 80px;
+}
+
+.align-self .display-grid .item:nth-child(3) {
+  align-self: end;
+  background: peachpuff;
+}
+
+/* ---------------------------
+  Auto-fit
+--------------------------- */
+.auto-fit .display-grid {
+  grid-template-columns: repeat(auto-fit, minmax(100px, 1fr));
+}
+
+.auto-fill .display-grid {
+  grid-template-columns: repeat(auto-fill, minmax(100px, 1fr));
+}
+
+/* ---------------------------
+  Minmax
+--------------------------- */
+.min-content .display-grid {
+  grid-template-columns: 150px 1fr min-content;
+}
+
+.minmax .display-grid {
+  grid-template-columns: repeat(auto-fill, minmax(150px, 1fr));
+}
+

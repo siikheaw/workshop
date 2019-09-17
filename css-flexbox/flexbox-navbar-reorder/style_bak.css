@@ -1,0 +1,110 @@
+@import url('https://fonts.googleapis.com/css?family=Roboto+Mono&display=swap');
+
+/* Basic setup */
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+html {
+    background: ghostwhite url(./papyrus.png);
+    background-repeat: repeat;
+}
+
+body {
+    min-height: 100vh;
+    padding: 8vw;
+    font-family: 'Roboto Mono', sans-serif;
+    font-size: 16px;
+}
+
+/* Template setup */
+.page-wrapper {
+    /* padding: 20px; */
+    outline: 3px solid salmon;
+}
+.page-header {
+    /* margin: 20px auto; */
+    text-align: center;
+}
+
+.page-title {
+    margin: 20px auto;
+    font-size: 42px;
+    text-align: center;
+    text-transform: uppercase;
+    line-height: 1em;
+    color: black;
+}
+
+/* Cosmetic stuff */
+.flex-nav {
+    margin: 50px auto;
+    padding: 20px;
+    font-family: 'Roboto Mono', sans-serif;
+    font-size: 13px;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+    background: black;
+    box-shadow: 0 0 5px rgba(0, 0, 0, 0.5);
+}
+
+.flex-nav .logo img {
+    max-width: 100%;
+}
+
+.flex-nav ul {
+    list-style: none;
+}
+
+.flex-nav li {
+    padding: 10px;
+    text-align: center;
+}
+
+.flex-nav li a {
+    color: ghostwhite;
+    text-decoration: none;
+    transition: all 0.3s ease 0s;
+}
+
+.flex-nav li a:hover {
+    color: turquoise;
+}
+
+.flex-nav .logo {
+    cursor: pointer;
+}
+
+/*
+  Flex stuff
+*/
+
+.flex-nav ul {
+    display: flex;
+}
+
+.flex-nav li {
+    flex: 3;
+}
+
+.flex-nav .social {
+    flex: 1;
+}
+
+@media (max-width: 1000px) {
+    .flex-nav ul {
+        flex-wrap: wrap;
+    }
+
+    .flex-nav li {
+        flex-basis: 50%;
+    }
+}
+
+@media (max-width: 500px) {
+    .flex-nav li {
+        flex-basis: 100%;
+    }
+}

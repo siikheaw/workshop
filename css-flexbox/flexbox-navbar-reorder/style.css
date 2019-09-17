@@ -1,0 +1,163 @@
+@import url('https://fonts.googleapis.com/css?family=Roboto+Mono&display=swap');
+
+/* Basic setup */
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+html {
+    background: ghostwhite url(./papyrus.png);
+    background-repeat: repeat;
+}
+
+body {
+    min-height: 100vh;
+    padding: 5vw;
+    font-family: 'Roboto Mono', sans-serif;
+    font-size: 16px;
+}
+
+/* Template setup */
+.page-header {
+    text-align: center;
+}
+
+.page-title {
+    margin: 20px auto;
+    font-size: 42px;
+    text-align: center;
+    text-transform: uppercase;
+    line-height: 1em;
+    color: black;
+}
+
+/* Cosmetic stuff */
+.flex-nav {
+    width: 100%;
+    margin: 20px auto;
+    padding: 20px;
+    font-family: 'Roboto Mono', sans-serif;
+    font-size: 13px;
+    text-align: center;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+    background: black;
+    box-shadow: 0 0 5px rgba(0, 0, 0, 0.5);
+}
+
+.flex-nav .logo img {
+    max-width: 100%;
+}
+
+.flex-nav li {
+    padding: 10px;
+    text-align: center;
+}
+
+.flex-nav a {
+    color: #fff;
+    text-decoration: none;
+    transition: all 0.3s ease 0s;
+}
+
+.flex-nav a:hover {
+    color: turquoise;
+}
+
+.flex-nav .logo {
+    cursor: pointer;
+}
+
+.toggleNav {
+    display: block;
+    margin: auto;
+}
+
+.hero {
+    width: 100%;
+    max-height: 400px;
+    margin: 20px auto;
+}
+
+.hero img {
+    width: 100%;
+    height: auto;
+}
+
+/*
+  Flex stuff
+*/
+.page-wrapper {
+    display: flex;
+    flex-direction: column;
+    overflow: hidden;
+}
+
+.page-header {
+    order: 2;
+}
+
+.flex-nav {
+    order: 1;
+}
+
+.hero {
+    order: 3;
+}
+
+.flex-nav ul {
+    list-style: none;
+}
+
+.flex-nav ul.open {
+    display: flex;
+    flex-wrap: wrap;
+}
+
+.flex-nav ul li {
+    flex:  1 1 50%;
+}
+
+.flex-nav ul .social {
+    flex: 1 1 25%;
+}
+
+@media (max-width: 600px) {
+    .flex-nav ul {
+        display: none;
+    }
+}
+
+@media (min-width: 600px) {
+    .toggleNav {
+        display: none;
+    }
+
+    .page-header {
+        order: 1;
+    }
+    
+    .flex-nav {
+        order: 2;
+    }
+    
+    .hero {
+        order: 3;
+    }
+
+    .flex-nav ul {
+        display: flex;
+    }
+}
+
+@media (min-width: 1000px) {
+    .flex-nav ul li {
+        flex: 3;
+    }
+
+    .flex-nav ul .social {
+        flex: 1;
+    }
+}
